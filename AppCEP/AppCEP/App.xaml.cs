@@ -10,7 +10,7 @@ namespace AppCEP
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new View.Menu());
         }
 
         protected override void OnStart()

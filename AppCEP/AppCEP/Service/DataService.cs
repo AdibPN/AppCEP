@@ -31,7 +31,7 @@ namespace AppCEP.Service
             return end;
         }
 
-        public static async Task<List<Bairro>> GetBarrosByCidade(int id_cidade)
+        public static async Task<List<Bairro>> GetBairrosByCidade(int id_cidade)
         {
             List<Bairro> arr_bairros = new List<Bairro>();
 
@@ -86,16 +86,16 @@ namespace AppCEP.Service
             return arr_logradouros;
         }
 
-        public static async Task<List<Logradouro>> GetCepByLoagradouro(string logradouro)
+        public static async Task<List<Cep>> GetCepsByLoagradouro(string logradouro)
         {
-            List<Logradouro> arr_cep = new List<Logradouro>();
+            List<Cep> arr_cep = new List<Cep>();
             using (HttpClient client = new HttpClient())
             {
                 HttpResponseMessage response = await client.GetAsync("https://cep.metoda.com.br/cep/by-logradouro?logradouro=" + logradouro);
                 if (response.IsSuccessStatusCode)
                 {
                     string json = response.Content.ReadAsStringAsync().Result;
-                    arr_cep = JsonConvert.DeserializeObject<List<Logradouro>>(json);
+                    arr_cep = JsonConvert.DeserializeObject<List<Cep>>(json);
                 }
                 else
                     throw new Exception(response.RequestMessage.Content.ToString());

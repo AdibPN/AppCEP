@@ -28,6 +28,8 @@
 
                 </StackLayout>
 
+
+
                 <ListView x:Name="lst_bairros">
                     <ListView.Header>
                         <StackLayout>

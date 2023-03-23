@@ -44,8 +44,24 @@ namespace AppCEP.View
 
         }
 
-        private void pck_cidade_SelectedIndexChanged(object sender, EventArgs e)
+        private async void pck_cidade_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+                Picker disparador = sender as Picker;
+                Cidade cidade_selecionado = (Cidade)disparador.SelectedItem;
+
+                List<Bairro> arr_bairros = await DataService.GetBairrosByCidade(cidade_selecionado.id_cidade);
+
+                lista_bairros.Clear();
+
+                arr_bairros.ForEach(i => lista_bairros.Add(i));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                await DisplayAlert("Ops", ex.Message, "OK");
+            }
 
         }
 

@@ -17,7 +17,7 @@
                     Text="" />
 
             <Button Grid.Row="2" Grid.Column="0"
-                    Text="Buscar Ruas de Bairro" Clicked="Button_Clicked_5"/>
+                    Text="Buscar endereço por CEP" Clicked="Button_Clicked_5"/>
 
             <Button Grid.Row="2" Grid.Column="1" Text="Bairros por Cidade" Clicked="Button_Clicked_4"/>
 

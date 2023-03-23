@@ -15,8 +15,6 @@
                         <Picker.Items>
                             <x:String>SP</x:String>
                             <x:String>MG</x:String>
-
-
                         </Picker.Items>
                     </Picker>
 

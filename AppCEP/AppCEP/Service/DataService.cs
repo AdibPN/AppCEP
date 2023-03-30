@@ -12,30 +12,32 @@ namespace AppCEP.Service
     {
 
 
+        //feito
         public static async Task<Endereco> GetEnderecoByCep(string cep)
         {
             Endereco end;
 
-            using(HttpClient client = new HttpClient())
+            using (HttpClient client = new HttpClient())
             {
                 HttpResponseMessage response = await client.GetAsync("https://cep.metoda.com.br/endereco/by-cep?cep=" + cep);
-                    if(response.IsSuccessStatusCode)
+                if (response.IsSuccessStatusCode)
                 {
                     string json = response.Content.ReadAsStringAsync().Result;
                     end = JsonConvert.DeserializeObject<Endereco>(json);
                 }
-                    else
+                else
                     throw new Exception(response.RequestMessage.Content.ToString());
 
             }
             return end;
         }
 
+        //feito
         public static async Task<List<Bairro>> GetBairrosByCidade(int id_cidade)
         {
             List<Bairro> arr_bairros = new List<Bairro>();
 
-            using(HttpClient client = new HttpClient())
+            using (HttpClient client = new HttpClient())
             {
                 HttpResponseMessage response = await client.GetAsync("https://cep.metoda.com.br/bairro/by-cidade?id_cidade=" + id_cidade);
 
@@ -45,16 +47,18 @@ namespace AppCEP.Service
                     arr_bairros = JsonConvert.DeserializeObject<List<Bairro>>(json);
                 }
                 else
-                    throw new Exception(response.RequestMessage.Content.ToString()); 
+                    throw new Exception(response.RequestMessage.Content.ToString());
 
             }
             return arr_bairros;
         }
 
+
+        //feito
         public static async Task<List<Cidade>> GetCidadesByEstado(string uf)
         {
             List<Cidade> arr_cidades = new List<Cidade>();
-            using(HttpClient client = new HttpClient())
+            using (HttpClient client = new HttpClient())
             {
                 HttpResponseMessage response = await client.GetAsync("https://cep.metoda.com.br/cidade/by-uf?uf=" + uf);
                 if (response.IsSuccessStatusCode)
@@ -86,6 +90,8 @@ namespace AppCEP.Service
             return arr_logradouros;
         }
 
+
+        //feito
         public static async Task<List<Cep>> GetCepsByLoagradouro(string logradouro)
         {
             List<Cep> arr_cep = new List<Cep>();

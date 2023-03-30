@@ -12,32 +12,12 @@
 
             <ActivityIndicator x:Name="carregando" IsRunning="False" />
 
-            <ListView x:Name="lst_endereco">
-                <ListView.Header>
-                    <Grid ColumnDefinitions="Auto, *, *, *"
-                          RowDefinitions="Auto">
-                        <Label Grid.Row="0" Grid.Column="0" Text="UF" />
-                        <Label Grid.Row="0" Grid.Column="1" Text="Cidade"/>
-                        <Label Grid.Row="0" Grid.Column="2" Text="Bairro"/>
-                        <Label Grid.Row="0" Grid.Column="3" Text="Rua"/>
-                    </Grid>
-                </ListView.Header>
 
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid ColumnDefinitions="Auto, *, *, Auto"
-                                  RowDefinitions="Auto">
-                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding UF}"/>
-                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding descricao_cidade}"/>
-                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding Bairro}"/>
-                                <Label Grid.Row="0" Grid.Column="3" Text="{Binding Rua}"/>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
+            <Label Text="{Binding UF }" />
+            <Label Text="{Binding descricao_cidade }" />
+            <Label Text="{Binding descricao_bairros }" />
+            
+  
 
         </StackLayout>
     </ContentPage.Content>

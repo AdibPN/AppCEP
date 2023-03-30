@@ -24,14 +24,20 @@ namespace AppCEP.View
             try
             {
                 carregando.IsRunning = true;
-                Endereco endereco =
-                    await DataService.GetEnderecoByCep(lst_ceps.Text);
-                //lst_endereco.ItemsSource = arr_enderecos;
+                
+                Endereco endereco = await DataService.GetEnderecoByCep(lst_ceps.Text);
+
+                BindingContext= endereco;
+
+                //Console.WriteLine("________________________________________");
+                //Console.WriteLine(endereco.descricao_cidade);
+                
 
             }
             catch (Exception ex)
             {
                 await DisplayAlert("Ops", ex.Message, "OK");
+                Console.WriteLine(ex.StackTrace);
 
             }
             finally

@@ -49,5 +49,11 @@ namespace AppCEP.View
         {
             Navigation.PushAsync(new View.EnderecoPorCep());
         }
+
+        private void Button_Clicked_6(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new View.CidadesPorEstado());
+
+        }
     }
 }

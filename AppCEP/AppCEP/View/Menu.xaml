@@ -14,7 +14,7 @@
                     Text="Buscar CEP" Clicked="Button_Clicked"/>
 
             <Button Grid.Row="1" Grid.Column="1"
-                    Text="" />
+                    Text="Cidades por estado" Clicked="Button_Clicked_6" />
 
             <Button Grid.Row="2" Grid.Column="0"
                     Text="Buscar endereço por CEP" Clicked="Button_Clicked_5"/>

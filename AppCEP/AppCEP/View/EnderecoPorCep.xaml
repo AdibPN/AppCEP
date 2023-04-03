@@ -4,10 +4,11 @@
              x:Class="AppCEP.View.EnderecoPorCep">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Vertical">
                 <SearchBar x:Name="lst_ceps"
                            Placeholder="Qual é o seu CEP?"/>
-                <Button Text="Buscar" Clicked="Button_Clicked_1" />
+                <Button Text="Buscar Remoto" Clicked="Button_Clicked" />
+                <Button Text="Buscar Local" Clicked="Button_Clicked_1" />
             </StackLayout>
 
             <ActivityIndicator x:Name="carregando" IsRunning="False" />
